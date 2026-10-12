@@ -1,0 +1,80 @@
+# Rejestr załogi dla firmy fikcyjnej "Piekarnia Przykładowa".
+# Jedno źródło prawdy: kto, w którym dziale, kiedy, jaką klasą kosztu i na jakim kluczu.
+# Modele są tu tylko jako etykiety; w kodzie agenta nie ma żadnego modelu.
+budzet:
+  sufit: 50.0        # jednostki poglądowe na miesiąc
+  alarm: 0.70
+  sen: 0.90
+agenci:
+  dyspozytor-raportu:
+    budynek: dyspozytornia
+    stan: aktywny
+    krytyczny: true
+    model: null
+    klasa: skrypt
+    skrypt: agents/raport_dobowy.py
+    harmonogram: ["08:00"]
+  straznik-pieca:
+    budynek: serwerownia
+    stan: aktywny
+    krytyczny: true
+    model: null
+    klasa: skrypt
+    skrypt: agents/straznik.py
+    harmonogram: ["06:00", "12:00", "18:00"]
+  ekonom:
+    budynek: dyspozytornia
+    stan: aktywny
+    krytyczny: true
+    model: null
+    klasa: skrypt
+    skrypt: agents/straznik.py
+    harmonogram: ["09:00"]
+  piekarz-zamowien:
+    budynek: sklep
+    stan: aktywny
+    model: <model-sredni>
+    klasa: czesty
+    klucz: CREW_KEY_ZAMOWIENIA
+    skrypt: agents/agent_llm.py
+    harmonogram: ["07:00", "11:00", "15:00"]
+  redaktor-wystaw:
+    budynek: studio
+    stan: aktywny
+    model: <model-sredni>
+    klasa: czesty
+    klucz: CREW_KEY_REDAKTOR
+    skrypt: agents/agent_llm.py
+    harmonogram: ["09:00", "17:00"]
+  sedzia:
+    budynek: laboratorium
+    stan: aktywny
+    model: <model-oceniajacy>
+    klasa: rzadki
+    klucz: CREW_KEY_SEDZIA
+    skrypt: agents/agent_llm.py
+    harmonogram: ["09:30", "14:00"]
+  prasowka:
+    budynek: obserwatorium
+    stan: aktywny
+    model: <model-maly>
+    klasa: rzadki
+    klucz: CREW_KEY_PRASOWKA
+    skrypt: agents/agent_llm.py
+    harmonogram: ["06:30"]
+    dni: [0, 1, 2, 3, 4]
+  kontrola-cen:
+    budynek: sklep
+    stan: aktywny
+    model: null
+    klasa: skrypt
+    skrypt: agents/agent_awaria.py
+    harmonogram: ["10:00"]
+  tajemniczy-klient:
+    budynek: laboratorium
+    stan: uspiony
+    model: <model-maly>
+    klasa: rzadki
+    klucz: CREW_KEY_KLIENT
+    skrypt: agents/agent_llm.py
+    harmonogram: ["13:00"]

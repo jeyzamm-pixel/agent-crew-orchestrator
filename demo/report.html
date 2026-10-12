@@ -1,0 +1,37 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Załoga: dzień pracy</title>
+<style>
+:root{--n:#0A95C9;--o:#FC6E08;--g:#021836;--bg:#f5f8fb;--card:#fff;--line:#dbe4ec}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,Segoe UI,sans-serif;background:var(--bg);color:var(--g)}
+main{max-width:1100px;margin:0 auto;padding:28px 20px 40px}
+h1{font-size:26px;margin:0 0 4px}p.s{margin:0 0 22px;color:#476}
+.bar{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:170px}
+.st b{display:block;font-size:26px}.st.w b{color:var(--o)}
+.meter{height:10px;border-radius:6px;background:#e3ebf2;overflow:hidden;margin-top:8px}
+.meter i{display:block;height:100%;width:92%;background:var(--o)}
+h2{font-size:16px;margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.k{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column}
+.k small{color:#58708a}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eaf3f9;font-size:13px}td.o{color:#476;font-size:13px}
+.b{padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600;color:#fff}
+.ok{background:var(--n)}.bl{background:#c2410c}.sk{background:#7a8a99}
+.al{background:#fff4ec;border:1px solid #f9c9a3;border-radius:12px;padding:10px 18px}
+</style></head><body><main>
+<h1>Załoga Piekarni Przykładowej</h1>
+<p class="s">Symulacja jednego dnia (12.10.2026). Dyspozytor budzi agentów według rejestru, pilnuje budżetu i zgłasza ciszę.</p>
+<div class="bar">
+ <div class="st"><span>Agentów w rejestrze</span><b>9</b></div>
+ <div class="st"><span>Uruchomień</span><b>10</b></div>
+ <div class="st w"><span>Błędy zgłoszone</span><b>1</b></div>
+ <div class="st w"><span>Budżet miesiąca</span><b>92%</b><div class="meter"><i></i></div></div>
+</div>
+<h2>Przebiegi</h2>
+<table><tr><th>Czas</th><th>Agent</th><th>Slot</th><th>Wynik</th><th>Szczegóły</th></tr><tr><td>06:05</td><td>straznik-pieca</td><td>06:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>straznik-pieca: reguły sprawdzone, bez odchyleń</td></tr><tr><td>07:05</td><td>piekarz-zamowien</td><td>07:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>piekarz-zamowien widzi klucze: CREW_KEY_ZAMOWIENIA</td></tr><tr><td>07:05</td><td>prasowka</td><td>06:30</td><td><span class='b ok'>Zrobione</span></td><td class='o'>prasowka widzi klucze: CREW_KEY_PRASOWKA</td></tr><tr><td>08:05</td><td>dyspozytor-raportu</td><td>08:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>dyspozytor-raportu: raport dobowy złożony</td></tr><tr><td>09:05</td><td>ekonom</td><td>09:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>ekonom: reguły sprawdzone, bez odchyleń</td></tr><tr><td>09:05</td><td>redaktor-wystaw</td><td>09:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>redaktor-wystaw widzi klucze: CREW_KEY_REDAKTOR</td></tr><tr><td>10:05</td><td>sedzia</td><td>09:30</td><td><span class='b ok'>Zrobione</span></td><td class='o'>sedzia widzi klucze: CREW_KEY_SEDZIA</td></tr><tr><td>10:05</td><td>kontrola-cen</td><td>10:00</td><td><span class='b bl'>Błąd</span></td><td class='o'>źródło cen niedostępne</td></tr><tr><td>11:05</td><td>piekarz-zamowien</td><td>11:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>piekarz-zamowien widzi klucze: CREW_KEY_ZAMOWIENIA</td></tr><tr><td>12:05</td><td>straznik-pieca</td><td>12:00</td><td><span class='b ok'>Zrobione</span></td><td class='o'>straznik-pieca: reguły sprawdzone, bez odchyleń</td></tr><tr><td>14:05</td><td>sedzia</td><td>14:00</td><td><span class='b sk'>Pominięty</span></td><td class='o'>budżet 90%: niekrytyczny śpi</td></tr><tr><td>14:05</td><td>tajemniczy-klient</td><td>13:00</td><td><span class='b sk'>Pominięty</span></td><td class='o'>uśpiony w rejestrze</td></tr></table>
+<h2>Cisza: kto miał slot i nie pracował (raport dobowy)</h2>
+<div class="al"><ul><li>nikt</li></ul></div>
+<h2>Rejestr</h2><div class="grid"><div class='k'><b>dyspozytor-raportu</b><small>dyspozytornia</small><small>reguły, bez modelu</small><small>aktywny · krytyczny</small></div><div class='k'><b>straznik-pieca</b><small>serwerownia</small><small>reguły, bez modelu</small><small>aktywny · krytyczny</small></div><div class='k'><b>ekonom</b><small>dyspozytornia</small><small>reguły, bez modelu</small><small>aktywny · krytyczny</small></div><div class='k'><b>piekarz-zamowien</b><small>sklep</small><small>model: &lt;model-sredni&gt;</small><small>aktywny</small></div><div class='k'><b>redaktor-wystaw</b><small>studio</small><small>model: &lt;model-sredni&gt;</small><small>aktywny</small></div><div class='k'><b>sedzia</b><small>laboratorium</small><small>model: &lt;model-oceniajacy&gt;</small><small>aktywny</small></div><div class='k'><b>prasowka</b><small>obserwatorium</small><small>model: &lt;model-maly&gt;</small><small>aktywny</small></div><div class='k'><b>kontrola-cen</b><small>sklep</small><small>reguły, bez modelu</small><small>aktywny</small></div><div class='k'><b>tajemniczy-klient</b><small>laboratorium</small><small>model: &lt;model-maly&gt;</small><small>uspiony</small></div></div>
+</main></body></html>
