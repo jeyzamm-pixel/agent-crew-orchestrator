@@ -1,5 +1,7 @@
 # Agent Crew Orchestrator
 
+![Agent Crew Orchestrator](docs/okladka.png)
+
 Ponad 50 stałych agentów AI pracujących na serwerze jak zespół: każdy ma etat, harmonogram, własny klucz z limitem i kartę obowiązków. Jeden dyspozytor ich budzi i pilnuje budżetu.
 
 *50+ scheduled AI agents working like a team: each has a role, a schedule, its own rate-limited key and a duty card. One dispatcher wakes them and guards the budget.*
